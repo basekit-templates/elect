@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,500,600);
+
+.slideshow-home .responsiveslideshow {
+
+    .slides-list {
+        height: 75vh;
+
+        @media only screen and (max-width: 1024px) {
+            height: 85vh;
+        }
+
+        @media only screen and (max-height: 400px) {
+            height: 100vh;
+        }
+    }
+
+    .figure {
+        .flex-display(flex);
+        .justify-content(flex-start);
+    }
+
+    .caption {
+        .align-self(center);
+        position: relative;
+        margin: 0 auto;
+        max-width: 860px;
+        text-align: center;
+        width: auto;
+
+        @media @tablet-860px {
+            margin: 0 15px;
+        }
+    }
+
+    .slide-navigation {
+        background-color: fade(black, 30%);
+    }
+
+    .slide-navigation .pause-toggle-only {
+        background-color: transparent;
+        width: 60px;
+    }
+
+    .slide-pagination {
+        right: 25px;
+        top: 0;
+        bottom: 0;
+        .flex-display;
+        .align-items(center);
+    }
+
+    .pagination-list {
+        padding: 8px 8px 3px;
+
+        @media @mobile-650px {
+            left: 15px;
+            right: initial;
+        }
+
+        @media only screen and (max-height: 400px) {
+            right: 15px;
+            left: initial;
+            top: 15px;
+        }
+    }
+
+    .pagination-item {
+        display: block;
+        line-height: 0;
+        margin: 10px 0;
+    }
+
+    .next-button,
+    .previous-button {
+        height: 12px;
+        width: 12px;
+    }
+
+    .previous-button {
+        left: 22px;
+    }
+
+    .next-button {
+        right: -22px;
+    }
+}
+
+.template-header {
+    padding: 25px 30px;
+
+    @media @mobile-650px {
+        padding: 25px;
+    }
+}

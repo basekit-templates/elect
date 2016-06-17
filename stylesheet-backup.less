@@ -1,0 +1,1216 @@
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  1.  LESS Includes
+//  2.  Global Styles
+//  3.  Theme Styles
+
+
+
+// -----------------------------
+//  1. LESS Includes
+// -----------------------------
+
+
+// BK LESS Framework Include
+// -------------------------
+
+@import "@{templateCommon}/bk-less-framework-v8.less";
+
+
+
+// Theme Includes
+// --------------
+
+@import "@{templateLocal}/less/mixins.less";            // Mixins
+@import "@{templateLocal}/less/type.less";              // Typography
+@import "@{templateLocal}/less/widgets.less";           // Widgets
+
+
+// Plugin Includes
+// ---------------
+
+@import "@{templateLocal}/less/plugins/blog.less";              // Blog
+@import "@{templateLocal}/less/plugins/menu.less";              // Menu
+@import "@{templateLocal}/less/plugins/ecommerce.less";         // Ecommerce
+
+
+
+// -----------------------------
+//  2. Theme Styles
+// -----------------------------
+
+#tdk-toolbar {
+    display: none!important;
+}
+
+// Global
+// ---------------
+
+
+// Body styling
+body {
+    background-color: @color-swatch7;
+}
+
+
+// Entire template container
+.template-container {
+    position: relative;
+}
+
+
+// Container
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+
+    @media @tablet-860px {
+        margin: 0 25px;
+    }
+}
+
+[role="main"] .container {
+    background-color: @color-swatch1;
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    padding: 30px 35px;
+}
+
+
+
+// Form Styles
+// ---------------
+
+
+// Legend styles
+legend {
+    color: @color-swatch4;
+    font-family: @font__h2--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h2--font-weight;
+    letter-spacing: @font__h3--letter-spacing;
+    line-height: @font__h3--line-height;
+    margin-bottom: 20px;
+
+    @media @mobile-650px {
+        font-size: bkscale(@font__h3--font-size, 0.8);
+        line-height: bkscale(@font__h3--line-height, 0.85);
+    }
+}
+
+
+// Label styles
+label,
+.cell--header {
+    color: @color-swatch5;
+    font-family: @font-swatch4-font-family;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+
+// Inputs & textareas
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+    border: 2px solid @color-swatch5;
+    color: darken(@color-swatch5, 20%);
+    font-size: bkscale(@font__p--font-size, 0.95);
+    padding: 10px;
+    -webkit-appearance: none;
+    &:focus {
+        border-color: darken(@color-swatch5, 10%);
+        box-shadow: inset 0 0px 10px rgba(240,240,240, 0.5);
+        .transition(.3s all ease-in);
+    }
+}
+
+// Heights for inputs only
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.product-filters .input--search,
+.input--single-line {
+    height: 54px;
+}
+
+
+// Select styles
+select {
+    font-family: @font-swatch4-font-family;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 500;
+    height: 54px;
+    padding: 0 12px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+// MS select styling
+select::-ms-expand{
+    display: none;
+}
+
+
+// Add custom dropdown icon to selects
+.select-wrap {
+    position: relative;
+    &:after {
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 16px;
+        text-rendering: auto;
+        content:"\f107";
+        position: absolute;
+        right: 15px;
+        top: 22%;
+    }
+}
+
+
+// Button styling
+button,
+.button {
+    background-color: @color-swatch3;
+    color: lighten(@color-swatch3, 100%);
+    font-size: @font__button--font-size;
+    font-weight: @font__button--font-weight;
+    line-height: @font__button--line-height;
+    letter-spacing: @font__button--letter-spacing;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    .transition(all 0.5s ease-in-out);
+
+    &:hover {
+        background-color: darken(@color-swatch3, 15%);
+        color: lighten(@color-swatch3, 100%);
+    }
+}
+
+// Show & hide button
+.button--expand {
+    background-color: transparent;
+    padding: 0;
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    .more, .less {
+        background-color: @color-swatch3;
+        color: lighten(@color-swatch3, 100%);
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 25px;
+        padding: 0 10px;
+    }
+}
+
+
+
+// Header Styling
+// ----------------
+
+
+// Fix for VH not working with the mobile editor in iOS
+.home-page,
+.blog-page,
+.home-page body.touch,
+.blog-page body.touch,
+.home-page body.touch .template-container,
+.blog-page body.touch .template-container {
+    @media @tablet-860px {
+        height: 100%;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.home-page body.touch .template-container,
+.blog-page body.touch .template-container {
+    @media @tablet-860px {
+        overflow: scroll;
+    }
+}
+
+
+// Default header styling (For pages with no overlayed feature, slideshow, blog image etc)
+.template-navigation,
+.slideshow-home [data-widget-type="responsiveslideshow"].bk-tpl-hidden + .template-header-container .template-navigation {
+    background-color: @color-swatch7;
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    padding: 15px 25px;
+    position: relative;
+    z-index: 1;
+
+    @media @tablet-860px {
+        padding: 20px 0 20px 20px;
+    }
+
+    @media @mobile-650px {
+        margin: 0;
+        padding: 20px 0 20px 25px;
+    }
+}
+
+
+// Contaienr for brand and navigation
+.template-header-container {
+
+}
+
+
+// Positions logo and company name over slideshow
+.template-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+
+
+// Stops logo overlapping at mobile
+.logo-image {
+    max-width: 500px;
+
+    @media @mobile-650px {
+        max-width: 200px;
+    }
+}
+
+
+// Header styling if slideshow is present
+.slideshow-home [data-widget-type="responsiveslideshow"] + .template-header-container {
+
+    .template-navigation {
+        background-color: @color-swatch1;
+        margin: 0 auto;
+        max-width: 1200px;
+        top: -40px;
+        z-index: 10002;
+
+        .container {
+            margin: 0;
+            max-width: 100%;
+
+             @media @mobile-650px {
+                margin: 0;
+            }
+        }
+    }
+
+    .template-header {
+        background-color: transparent;
+        .flex-display;
+        .justify-content(space-between);
+        .align-items(center);
+        width: 100%;
+
+        // Header container
+        .brand-container {
+            .flex-display;
+            .align-items(center);
+            position: relative;
+        }
+
+
+        // Logo & companyname
+        [data-widget-type="logo"],
+        [data-widget-type="companyname"] {
+            @media @tablet-860px  {
+                z-index: 9999;
+            }
+        }
+
+
+        // Logo styling
+        [data-widget-type="logo"] {
+            margin-right: 12px;
+            max-width: 100%;
+
+            .logo-link {
+                display: block;
+            }
+        }
+
+
+        // Companyname styling
+        [data-widget-type="companyname"] {
+            @media @tablet-860px  {
+                margin-right: 60px;
+            }
+        }
+
+        .companyname {
+            line-height: 0;
+        }
+
+        // Company name
+        .company-link {
+            color: @font-swatch1-color;
+            line-height: @font__companyname--line-height;
+            word-break: normal;
+            word-wrap: normal;
+        }
+
+        [data-widget-type="button"] {
+            .align-self(flex-end);
+        }
+    }
+}
+
+
+
+// Navigation Styles For Default Pages
+// ------------------------------------
+
+
+// Hide navigation toggle button
+.navigation-toggle {
+    display: none;
+}
+
+
+// Universal navigation styling
+.navigation-item {
+
+    &:hover .navigation-list--children {
+        display: none;
+    }
+
+    .item-name {
+        color: fade(@color-swatch6, 65%);
+        text-overflow: initial;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 26px;
+        text-transform: uppercase;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    .item-name:hover {
+        color: darken(@color-swatch6, 15%);
+    }
+
+    &.selected a {
+        color: darken(@color-swatch6, 15%);
+    }
+
+    &:first-child .item-name {
+        padding-left: 0;
+    }
+
+    // Navigation dropdown
+    &.folder {
+        .transition(all 0.2s ease-in-out);
+
+        &.open,
+        &:hover {
+            ul {
+                display: block;
+                height: auto;
+            }
+        }
+
+        ul {
+            border: 1px solid darken(@color-swatch7, 4%);
+            display: none;
+            text-align: left;
+
+            .item-name {
+                padding: 10px 12px 8px;
+            }
+        }
+
+        // Navigation dropdown arrow
+        span.item-name:after {
+            color: fade(@color-swatch6, 75%);
+            content: "\f0dd";
+            font-family: FontAwesome;
+            font-size: 13px;
+            margin-left: 8px;
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+
+ul.navigation-list--children {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 125px;
+    max-width: 160px;
+    background-color: @color-swatch7;
+}
+
+.navigation-list {
+    height: 100%;
+    margin: 0;
+}
+
+div[data-widget-type="extendednavigation"] {
+    .flex(1 1 auto);
+    position: relative;
+}
+
+@media @tablet-860px {
+
+    div[data-widget-type="extendednavigation"] {
+        /*position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;*/
+
+        .widget-overlay {
+            display: none!important;
+        }
+    }
+
+    .bk-extendednavigation {
+        .flex-display;
+        .align-content(center);
+        .align-items(center);
+        .justify-content(flex-end);
+        position: relative;
+    }
+
+    .navigation-body {
+        background-color: @color-swatch7;
+        -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        position: fixed;
+        top: 0;
+        right: -80%;
+        bottom: 0;
+        margin: 0;
+        height: 100vh;
+        width: 75%;
+        .transition(right 400ms ease);
+        z-index: 9999;
+    }
+
+    .nav-open div[data-widget-type="extendednavigation"] .widget-overlay {
+        display: block!important;
+        left: initial;
+        position: fixed!important;
+        top: 55px;
+        height: 80vh;
+        width: 75%;
+        z-index: 100004;
+    }
+
+    .nav-open .navigation-body,
+    .nav-open .navigation-list {
+        right: 0;
+    }
+
+    .navigation-body.open .navigation-item.folder ul {
+        border-bottom: 1px solid darken(@color-swatch7, 4%);
+        border-top: 1px solid darken(@color-swatch7, 4%);
+        padding: 5px 25px 5px;
+
+        .item-name {
+            padding: 10px 12px 8px;
+        }
+    }
+
+    .navigation-item.folder.open ul {
+        margin-top: 0;
+        position: relative;
+    }
+
+
+    // Navigation Toggle
+    // -----------------
+
+    .navigation-toggle {
+
+        // Displays as icon's middle bar
+        background-color: darken(@color-swatch6, 10%);
+        background-clip: content-box;
+        display: inline-block;
+        height: 34px;
+        margin: 0;
+        padding: 16px 0 16px 25px;
+        //position: absolute;
+        right: 0;
+        top: 0;
+        text-indent: -9999px;
+        .transition(background-color 0s ease-in);
+        width: 50px;
+        z-index: 99999;
+
+        // Top and bottom navigation item bar
+        &:after,
+        &:before {
+            background-color: darken(@color-swatch6, 10%);
+            content: "";
+            height: 2px;
+            width: 30px;
+            position: absolute;
+            right: 0;
+            display: block;
+            background: black;
+            margin-right: 0;
+            margin-left: 0;
+            .transition(all 0.35s ease-in-out);
+        }
+
+        // Top bar
+        &:before {
+            top: 9px;
+        }
+
+        // Bottom bar
+        &:after {
+            bottom: 9px;
+        }
+
+        &:hover {
+            background-color: darken(@color-swatch6, 10%);
+        }
+    }
+
+    .nav-open .navigation-toggle {
+
+        // Toggle Button open state
+        background-color: transparent!important;
+        position: fixed;
+        right: 20px;
+        top: 12px;
+        .transition(background-color 0s ease-out);
+        z-index: 100000;
+
+        &:before {
+            top: 23px;
+            background: @font-swatch6-color-hover!important;
+            .transform(rotate(45deg));
+        }
+        &:after {
+            bottom: 9px;
+            background: @font-swatch6-color-hover!important;
+            .transform(rotate(-45deg));
+        }
+    }
+
+    .basket-open .navigation-toggle {
+        z-index: 9999;
+    }
+
+
+    // Slide out navigation
+    .navigation-body {
+
+        .navigation-list {
+            margin-top: 65px;
+            -ms-overflow-style: none;
+            overflow-y: scroll;
+            position: static;
+            top: 0;
+            left: initial;
+            height: 80vh;
+            width: 100%;
+        }
+
+        .navigation-list .navigation-item {
+            display: block;
+            width: 100%;
+
+            &:last-child  {
+               border: none;
+            }
+
+            &.folder ul {
+                display: none;
+                padding-top: 0;
+                text-align: inherit;
+            }
+
+            &.folder.open ul {
+                display: block;
+            }
+
+            .item-name {
+                padding: 14px 25px 14px 50px;
+            }
+        }
+    }
+
+    ul.navigation-list--children  {
+        position: relative;
+        min-width: 100%;
+    }
+
+    // Navigation button overlay
+    .bk-extendednavigation + #page-zones__template-widgets__extendednavigation-header-nav-bk-overlay {
+        position: fixed!important;
+        right: 15px!important;
+        left: initial!important;
+        top: 18px!important;
+        bottom: 0px!important;
+        width: 50px!important;
+        height: 50px!important;
+    }
+
+    // Navigation overlay
+    .bk-extendednavigation.open + #page-zones__template-widgets__extendednavigation-header-nav-bk-overlay {
+        position: fixed!important;
+        left: inherit!important;
+        right: 0!important;
+        top: 85px!important;
+        width: 75%;
+        height: 100%!important;
+        width: 75%!important;
+        z-index: 99999!important;
+    }
+}
+
+
+
+// Slideshow
+// ---------------
+
+.slideshow-home {
+    position: relative;
+}
+
+.responsiveslideshow .widget-overlay {
+    top: 60px;
+
+    .widget__list {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+.slideshow-home .responsiveslideshow {
+
+    .slides-list {
+        position: relative;
+    }
+
+    // Overide the default display method to be able to transition
+    .slide-item {
+        display: list-item!important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        .transition(1s all ease-in-out);
+        visibility: hidden;
+
+        // The active state for the slideshows next and previous controls
+        &.current {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+    }
+
+    // Image element
+    figure {
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 0;
+        height: 75vh;
+
+        @media @tablet-860px {
+            height: 65vh;
+        }
+
+        @media only screen and (max-height: 400px) {
+            height: 100vh;
+        }
+
+        &:after {
+            background-color: fade(#000000, 40%);
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+
+            @media only screen and (max-width: 1024px) {
+                -webkit-box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
+                -moz-box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
+                box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
+            }
+
+            @media @mobile-650px {
+                -webkit-box-shadow: inset 0px 0px 150px 0px rgba(0,0,0,0.3);
+                -moz-box-shadow: inset 0px 0px 150px 0px rgba(0,0,0,0.3);
+                box-shadow: inset 0px 0px 150px 0px rgba(0,0,0,0.3);
+            }
+        }
+    }
+
+    // Image title and description
+    .caption {
+        background-color: transparent;
+        z-index: 2;
+
+        @media @tablet-860px {
+            max-width: 80%;
+            padding: 0;
+        }
+
+        @media @mobile-650px {
+            max-width: 90%;
+        }
+
+        // Slideshow title
+        .image-title {
+            color: white;
+            font-family: @font__h1--font-family;
+            font-size: @font__feature-headline--font-size;
+            font-weight: @font__feature-headline--font-weight;
+            letter-spacing: @font__feature-headline--letter-spacing;
+            line-height: @font__feature-headline--line-height;
+            margin-bottom: 5px;
+            -webkit-font-smoothing: antialiased;
+            text-transform: uppercase;
+
+            @media @tablet-860px {
+                font-size: bkscale(@font__feature-headline--font-size, 0.75);
+                line-height: bkscale(@font__feature-headline--line-height, 0.75);
+            }
+
+            @media @mobile-650px {
+                font-size: bkscale(@font__feature-headline--font-size, 0.6);
+                line-height: bkscale(@font__feature-headline--line-height, 0.6);
+            }
+        }
+
+        // Slideshow title description
+        .image-description {
+            color: white;
+            font-family: @font__p-font-family;
+            font-size: @font__feature-strapline--font-size;
+            letter-spacing: @font__feature--letter-spacing;
+            line-height: @font__feature-strapline--line-height;
+
+            @media @mobile-650px {
+                font-size: bkscale(@font__feature-strapline--font-size, 0.75);
+                line-height: bkscale(@font__feature-strapline--line-height, 0.75);
+            }
+        }
+    }
+
+    // Navigation buttons
+    .slide-navigation {
+        padding: 15px 0;
+        position: absolute;
+        left: 15px;
+        top: 45%;
+        margin: 0;
+        z-index: 3;
+
+        @media @mobile-650px {
+            display: none;
+            visibility: hidden;
+        }
+
+        // Button styles
+        button {
+            background-color: transparent;
+            color: white;
+            position: relative;
+            .transition(1s all ease-in-out);
+        }
+
+        // Button text
+        .control-text {
+            display: none;
+            height: 0;
+            visibility: hidden;
+        }
+
+        // Previous and next button
+        .previous-button,
+        .next-button {
+            &:before,
+            &:after {
+                display: none!important;
+            }
+        }
+
+        .next-button,
+        .previous-button {
+            background: transparent;
+            border-top: 2px solid white;
+            border-left: 2px solid white;
+            color: transparent;
+            display: block;
+            padding: 0;
+            text-indent: -9999px;
+            .transition(all .3s ease-in-out);
+            text-decoration: none;
+        }
+
+        // Next button
+        .next-button {
+            .transform(rotate(-135deg));
+            bottom: -5px;
+        }
+
+        // Previous button
+        .previous-button {
+            .transform(rotate(45deg));
+            top: -5px;
+        }
+
+        // Pause button
+        .js-btn-play {
+            background-color: transparent;
+            display: block;
+            padding: 0 5px;
+            margin: 0 auto;
+            height: 40px;
+            width: 60px;
+
+            &:after {
+                border-style: solid;
+                border-width: 9px 0 10px 13px;
+                border-color: transparent transparent transparent white;
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 2px;
+                right: 0;
+                margin: 0 auto;
+                top: 13px;
+            }
+
+            &:before {
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &.pause {
+                &:before, &:after {
+                    background-color: white;
+                    content: "";
+                    display: inline-block;
+                    margin: 0;
+                    opacity: 1;
+                    position: absolute;
+                    height: 16px;
+                    width: 2px;
+                    top: 13px;
+                    visibility: visible;
+                }
+                &:before {
+                    left: 32px;
+                }
+
+                &:after {
+                    border: none;
+                    left: 23px;
+                }
+            }
+        }
+    }
+
+    // Slide pagination
+    .slide-pagination {
+        position: absolute;
+        text-align: center;
+        z-index: 3;
+
+        ul.pagination- list {
+            text-align: center;
+            width: 100%;
+        }
+
+        // Pagination list element
+        li.pagination-item {
+
+            &.selected button {
+                background-color: white;
+                position: relative;
+            }
+        }
+
+        // Pagination button
+        button {
+            background-color: fade(white, 30%);
+            .border-radius(100px);
+            padding: 0;
+            text-indent: -9999px;
+            height: 10px;
+            width: 10px;
+        }
+    }
+}
+
+
+
+// Main
+// ---------------
+
+div[role="main"] {
+    padding: 3em 1em;
+    position: relative;
+    top: -40px;
+
+    @media @tablet-860px {
+        padding: 3em 0;
+    }
+
+    @media @mobile-650px {
+        padding: 2em 0;
+    }
+
+    &.ecom-product {
+        height: 100%;
+        padding: 0 1em 0;
+
+        @media @tablet-860px {
+            padding: 2em 25px;
+            height: auto;
+            min-height: 0;
+            max-height: initial;
+        }
+    }
+}
+
+
+
+// Profile widget
+// ---------------
+
+.default-profile div[data-widget-type="profile"] {
+    background-color: darken(@color-swatch1, 5%);
+    padding: 35px 30px 28px;
+    text-align: center;
+
+    .bk-profile {
+        margin: 0 auto;
+        max-width: 600px;
+
+        // Signup form
+        .signupform {
+
+            .form-body {
+                .flex-wrap(wrap);
+            }
+
+            // Show legend
+            .legend {
+                display: block;
+                visibility: visible;
+                float: left;
+                margin: 0 25px 0 0;
+                line-height: 60px;
+
+                @media @mobile-650px {
+                    font-size: bkscale(@font__h3--font-size, 0.9);
+                    line-height: bkscale(@font__h3--line-height, 0.95);
+                    float: none;
+                    margin: 0 0 15px 0;
+                }
+            }
+
+            // Hide label
+            .label {
+                display: none;
+                visibility: hidden;
+            }
+
+            // Form group
+            .form-group {
+                padding: 0;
+
+                @media @mobile-650px {
+                    .flex(1 0 auto);
+                }
+
+                // Bring button over input
+                &:last-child {
+                    margin-left: -1px;
+                }
+            }
+
+            // Form input
+            input {
+                border: 1px solid @color-swatch7;
+                height: 60px;
+            }
+
+            input[type="email"]:focus {
+                border: 1px solid darken(@color-swatch7, 8%);
+                box-shadow: none;
+            }
+
+            // Form button
+            button {
+                background-color: @color-swatch4;
+                color: white;
+                margin: 0;
+                height: 59px;
+
+                @media @mobile-650px {
+                    width: 100%;
+                }
+            }
+        }
+
+        // Remove padding from profile widget text
+        h2.headline, p.business {
+            padding-bottom: 0;
+        }
+
+        // Pushes Twitter username away from twitter bird
+        .account-name {
+            padding-right: 40px;
+        }
+    }
+}
+
+
+
+// Footer
+// ---------------
+
+.template-footer {
+    background-color: @color-swatch1;
+    padding: 30px 1em;
+    position: relative;
+
+    @media @mobile-650px {
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    // Flexbox positiong for footer elements
+    .container {
+        // Flex
+        .flex;
+        .flex-display;
+        .flex-wrap;
+
+        @media @mobile-650px {
+            display: block;
+        }
+    }
+
+    // Widgets grow to fill respective space
+    .widget {
+        .flex-grow(1);
+    }
+
+    p,
+    li,
+    a,
+    .headline,
+    .strapline {
+        color: lighten(@color-swatch1, 65%);
+    }
+
+    // Keep footer widgets vertically aligned
+    div[data-widget-type="profile"], div[data-widget-type="companyaddress"] {
+        .align-self(center);
+    }
+
+    // Footer company address widget
+    div[data-widget-type="companyaddress"] {
+        padding-right: 10px;
+    }
+
+    // Footer profile widget
+    div[data-widget-type="profile"] {
+        padding-left: 10px;
+        text-align: right;
+
+        @media @mobile-650px {
+            text-align: center;
+        }
+    }
+
+    // Address widget styling
+    .address-line {
+        display: inline-block;
+
+        @media @mobile-650px {
+            text-align: center;
+        }
+    }
+
+    // Profile widget signup form styling
+    .signupform {
+        label {
+            display: none;
+            visibility: hidden;
+        }
+        button {
+            margin-top: 0;
+        }
+
+        .form-body .form-group:first-child {
+            padding-right: 0;
+        }
+    }
+
+    .social-link {
+        background-color: lighten(@color-swatch1, 35%);
+        color: @color-swatch1;
+    }
+
+    .bk-profile {
+
+        // Remove padding from profile widget text
+        h2.headline, p.business {
+            padding-bottom: 0;
+        }
+
+        // Pushes Twitter username away from twitter bird
+        .account-name {
+            padding-right: 40px;
+        }
+    }
+
+    // Profile widget copyright styling
+    .copyright {
+        padding: 0;
+
+        @media @mobile-650px {
+            margin-top: 5px;
+            text-align: inherit;
+        }
+    }
+}
+
+
+
+// New colour variables
+// -----------------------
+
+//@import "@{templateLocal}/less/variables.less";
+@import "@{templateLocal}/less/fork.less";

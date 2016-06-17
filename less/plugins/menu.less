@@ -1,0 +1,209 @@
+
+// -----------------------------
+//  Menu
+// -----------------------------
+
+//  1.   Menu Navigation
+//  2.   Menu Styles
+
+
+
+// -----------------------------
+//  1. Menu Navigation
+// -----------------------------
+
+
+// Menu navigation container
+.menusections {
+
+	// Menu list items
+	li.menusections-item {
+		font-size: 14px;
+
+		// Adds circle divider between each list item
+		&:after {
+			color: lighten(@font-swatch5-color, 25%);
+			content: "\25C7";
+			display: inline-block;
+			font-family: Font Awesome;
+			font-size: 18px;
+			margin-left: 18px;
+			position: relative;
+		}
+
+	// Removes divider from last list item
+		&:last-child:after {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	// Menu link styling
+	a.menu-item-name {
+		color: @font-swatch6-color;
+		font-family: @font__p--font-family;
+		font-size: 18px;
+		font-weight: @font__navigation--font-weight;
+		&:hover {
+			color: @font-swatch6-color-hover;
+		}
+	}
+}
+
+
+
+// -----------------------------
+//  2. Menu Styles
+// -----------------------------
+
+
+// Menu column layout
+.menu-items:not(.menu-section--subsection),
+.menu-list {
+	column-count: 3;
+	column-gap: 50px;
+	-moz-column-count: 3;
+	-moz-column-gap: 50px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 50px;
+
+	@media @tablet-860px {
+		column-count: 2;
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+
+		margin-bottom: 30px;
+	}
+
+	@media @mobile-650px {
+		column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+	}
+}
+
+
+// Menu container
+.menu {
+	.item-content {
+		margin: 20px 0;
+	}
+
+	.item-image {
+		padding-bottom: 10px;
+
+		// Sets menu image height
+		.item-link {
+			background-color: transparent;
+			line-height: 280px;
+			height: 280px;
+		}
+	}
+
+	// Menu title
+	h3.item-title {
+		color: @font-swatch3-color;
+		font-family: @font__h2--font-family;
+		font-size: @font-swatch4-font-size;
+		font-weight: @font__h2--font-weight;
+		padding-bottom: 5px;
+	}
+
+	// Menu price
+	p.item-price {
+		font-family: @font__p--font-family;
+		font-size: bkscale(@font__p--font-size, 1.05);
+		font-weight: @font__h2--font-weight;
+		line-height: bkscale(@font__h4--line-height, 0.92);
+	}
+
+	// Menu item description
+	.item-description p {
+		line-height: bkscale(@font__p--line-height, 0.85);
+		padding-top: 8px;
+	}
+
+	// Menu item details
+	p.item-details {
+		color: lighten(@font-swatch5-color, 15%);
+		font-size: 16px;
+		font-style: italic;
+		line-height: 1.6;
+	}
+
+	// Menu subtitle
+	h4.item-subtitle {
+		display: none;
+		visibility: hidden;
+	}
+
+	// Menu dietary information
+		ul.dietary-list {
+			margin-top: 16px;
+		}
+
+		ul.dietary-list + ul.dietary-list--hotness {
+			margin-top: 2px;
+		}
+
+		li.dietary-item {
+			border: 2px solid @color-swatch7;
+			color: @color__secondary;
+			font-family: @font-swatch4-font-family;
+			font-size: 11px;
+			font-weight: 700;
+			padding: 0 10px;
+			letter-spacing: 1px;
+			margin-bottom: 5px;
+			margin-right: 0;
+			text-transform: uppercase;
+
+			// Removes gap from inline-block
+			&:nth-child(n+2) {
+				margin-left: -5px;
+			}
+		}
+	}
+
+
+
+// Featured menu item styles
+.menu-item--featured, .menu-section--featured {
+	background-color: transparent;
+	border: 2px solid @color-swatch7;
+	margin-bottom: 30px;
+	padding-bottom: 0;
+
+	.item-content {
+		margin-top: 0;
+	}
+
+	li.dietary-item {
+		background-color: @color__primary;
+		border: none;
+		color: @color__secondary;
+		margin-right: 8px;
+
+		&:first-child {
+			border-left: none;
+		}
+
+		&:nth-child(n+2) {
+			margin-left: -4px;
+		}
+	}
+}
+
+
+// Menu section header
+.section-header {
+	margin-bottom: 35px;
+
+	// Section subtitle
+	h3.section-subtitle {
+		color: darken(@font-swatch5-color, 7%);
+		font-size: bkscale(@font__h3--font-size, 0.68);
+		font-weight: 500;
+		line-height: bkscale(@font__h3--line-height, 0.75);
+	}
+}

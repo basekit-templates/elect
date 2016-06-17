@@ -1,0 +1,13 @@
+<div class="template-header-container">
+    <header class="template-header">
+    	<div class="brand-container">
+    		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'), "showTplWidget":"0"})|raw}}
+    		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+    	</div>
+        {{widget('button', 'button-donate', {'text': 'Donate', 'align': 'widget-align-centre', 'target': '_blank'})|raw}}
+    </header>
+
+    <nav class="template-navigation">
+        {{widget('extendednavigation', 'navigation', {"align":"center"})|raw}}
+    </nav>
+</div>

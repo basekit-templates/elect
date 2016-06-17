@@ -1,0 +1,228 @@
+
+// -----------------------------
+//  Mixins
+// -----------------------------
+
+
+
+// Media Queries
+// ------------------------------------------
+
+@tablet-860px: ~"only screen and (max-width: 860px)";
+@mobile-650px: ~"only screen and (max-width: 650px)";
+
+
+
+// General Mixins
+// ------------------------------------------
+
+
+// Border Radius
+.border-radius(@radius: 6px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+// Transitions
+.transition(@prop: all 0.5s ease) {
+    -webkit-transition: @prop;
+    -moz-transition:    @prop;
+    -ms-transition:     @prop;
+    -o-transition:      @prop;
+}
+
+
+// Animations
+.animation (@name, @duration: 2s, @ease: ease, @time: infinite, @direction: normal) {
+    -webkit-animation: @name @duration @ease @time @direction;
+    -moz-animation:    @name @duration @ease @time @direction;
+    -ms-animation:     @name @duration @ease @time @direction;
+    animation:         @name @duration @ease @time @direction;
+}
+
+
+// Transform
+.transform(@transform: scale(1)) {
+    -webkit-transform: @transform;
+    -ms-transform: @transform;
+    transform: @transform;
+}
+
+
+// Rotate
+.rotate(@value) {
+    moz-transform: rotate(@value);
+    -o-transform: rotate(@value);
+    -webkit-transform: rotate(@value);
+    -ms-transform: rotate(@value);
+    transform: rotate(@value);
+}
+
+
+// Gradients
+.gradient(@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+
+
+// Flexbox Mixins
+// ------------------------------------------
+
+
+// Flexbox Display
+.flex-display(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+}
+
+
+// Flex
+.flex(@columns: initial) {
+  -webkit-flex: @columns;
+     -moz-flex: @columns;
+      -ms-flex: @columns;
+          flex: @columns;
+}
+
+
+// Flex Direction
+.flex-direction(@direction: row) {
+      -webkit-box-orient: @direction;
+   -webkit-box-direction: @direction;
+  -webkit-flex-direction: @direction;
+     -moz-flex-direction: @direction;
+      -ms-flex-direction: @direction;
+          flex-direction: @direction;
+}
+
+
+// Flex Wrap
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+     -moz-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
+
+// Flex Source Order
+.flex-order(@order: 0) {
+  -webkit-box-ordinal-group: @order;
+              -webkit-order: @order;
+                 -moz-order: @order;
+                  -ms-order: @order;
+             -ms-flex-order: @order;
+                      order: @order;
+}
+
+// Flex Grow
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+  -ms-flex-positive: @grow;
+          flex-grow: @grow;
+}
+
+
+// Justify Content
+.justify-content(@justify: flex-start) {
+          webkit-box-pack: @justify;
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+      -ms-justify-content: @justify;
+            -ms-flex-pack: @justify;
+          justify-content: @justify;
+}
+
+
+// Align Content
+.align-content(@align: stretch) {
+  -webkit-align-content: @align;
+     -moz-align-content: @align;
+      -ms-align-content: @align;
+     -ms-flex-line-pack: @align;
+          align-content: @align;
+}
+
+
+// Align Items
+.align-self(@align: center) {
+  -webkit-align-self: @align;
+     -moz-align-self: @align;
+      -ms-align-self: @align;
+      -ms-flex-item-align: @align;
+      -ms-flex-align: @align;
+          align-self: @align;
+}
+
+// Align Items
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+      -ms-align-items: @align;
+       -ms-flex-align: @align;
+          align-items: @align;
+}
+
+
+// Ultimate Flexbox
+.ultimate-flex (@display: flex, @direction: row, @wrap: nowrap, @justify: space-between, @align: stretch, @align-items: flex-end) {
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+
+    -webkit-box-orient: @direction;
+    -webkit-box-direction: @direction;
+    -webkit-flex-direction: @direction;
+    -moz-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+
+
+    -webkit-flex-wrap: @wrap;
+    -moz-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+
+    webkit-box-pack: justify;
+    -webkit-justify-content: justify;
+    -moz-justify-content: justify;
+    -ms-justify-content: justify;
+    justify-content: justify;
+
+    -webkit-justify-content: @justify;
+    -moz-justify-content: @justify;
+    -ms-justify-content: @justify;
+    justify-content: @justify;
+
+    -webkit-align-content: @align;
+    -moz-align-content: @align;
+    -ms-align-content: @align;
+    -ms-flex-line-pack: @align;
+    align-content: @align;
+
+    -webkit-align-items: @align;
+    -moz-align-items: @align;
+    -ms-align-items: @align;
+    -ms-flex-align: @align;
+    align-items: @align;
+}

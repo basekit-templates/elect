@@ -1,0 +1,28 @@
+.menu .item-price,
+.social-link,
+button,
+.button,
+a {
+	color: @color__button--text;
+
+	&:hover {
+		color: darken(@color__button--text, 10%);
+	}
+}
+
+button,
+.social-link,
+.read-more,
+.button {
+	background-color: @color__button--background;
+
+	&:hover {
+		background-color: darken(@color__button--background--hover, 10%);
+		color: @color__button--text;
+	}
+}
+
+a,
+.phone-number-link {
+	color: @color__link--text;
+}
