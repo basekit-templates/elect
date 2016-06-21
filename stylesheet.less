@@ -70,6 +70,10 @@ body {
     @media only screen and (max-width: 1024px) {
         margin: 0 25px;
     }
+
+    @media @mobile-650px {
+        margin: 0 15px;
+    }
 }
 
 [role="main"] .container {
@@ -252,6 +256,28 @@ button,
     }
 }
 
+.home-page {
+    .template-header {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+
+        @media @mobile-650px {
+            position: relative;
+        }
+    }
+
+    .template-navigation {
+        top: -45px;
+
+        @media @mobile-650px {
+            top: 0;
+        }
+    }
+}
+
 .home-page .template-header-container {
     background-color: transparent;
     position: initial;
@@ -263,6 +289,12 @@ button,
     background-color: black;
     position: relative;
 
+    @media @mobile-650px {
+        .flex-display;
+        .flex-wrap(wrap);
+        .flex-direction(row);
+    }
+
     .pagetitle-text {
         color: @color__companyname--text;
         font-size: @font__h2--font-size;
@@ -273,33 +305,18 @@ button,
 }
 
 
-// Positions logo and company name over slideshow
-.template-header {
-    position: relative;
-    left: 0;
-    top: 0;
-    z-index: 10000;
-
-    .button {
-        padding: 7px 20px;
-
-        @media @mobile-650px {
-            margin-bottom: 20px;
-            padding: 3px 15px;
-            width: 100%;
-        }
-    }
-}
-
 .template-header {
     background-color: transparent;
     .flex-display;
     .justify-content(space-between);
     .align-items(center);
+    padding: 30px;
+    position: relative;
     width: 100%;
 
     @media @mobile-650px {
-        .flex-wrap(wrap);
+        .flex-order(0);
+        padding: 25px 25px 15px;
     }
 
     // Header container
@@ -376,6 +393,21 @@ button,
         }
 
         @media @mobile-650px {
+            position: absolute;
+            left: 0;
+            bottom: -50px;
+            width: auto;
+            z-index: 10003;
+        }
+    }
+
+    .button {
+        padding: 7px 20px;
+
+        @media @mobile-650px {
+            .border-radius(0);
+            padding: 3px 15px;
+            height: 50px;
             width: 100%;
         }
     }
@@ -404,15 +436,6 @@ button,
 }
 
 
-// Header styling if slideshow is present
-.slideshow-home [data-widget-type="responsiveslideshow"] + .template-header-container {
-
-    .template-header {
-        position: absolute;
-    }
-}
-
-
 
 // Navigation Styles
 // ------------------------------------
@@ -426,13 +449,11 @@ button,
     top: 25px;
     z-index: 10002;
 
-    @media @tablet-860px {
-        height: 50px;
-    }
-
     @media @mobile-650px {
-        margin-top: 5px;
-        top: 15px;
+        height: 50px;
+        margin-top: 0;
+        top: 0;
+        width: 100%;
     }
 
     .container {
@@ -541,7 +562,7 @@ div[data-widget-type="extendednavigation"] {
     position: relative;
 }
 
-@media @tablet-860px {
+@media @mobile-650px {
 
     div[data-widget-type="extendednavigation"] {
 
@@ -758,6 +779,24 @@ div[data-widget-type="extendednavigation"] {
 
 .slideshow-home {
     position: relative;
+
+    @media @mobile-650px {
+        .flex-display;
+        .flex-wrap(nowrap);
+        .flex-direction(column);
+
+        [data-widget-type="responsiveslideshow"] {
+            .flex-order(2);
+        }
+
+        .template-header-container {
+            .flex-order(1);
+        }
+
+        .template-header {
+            display: block;
+        }
+    }
 }
 
 .responsiveslideshow .widget-overlay {
@@ -1046,6 +1085,9 @@ div[data-widget-type="extendednavigation"] {
 // Main
 // ---------------
 
+.home-page div[role="main"] {
+    padding: 1.5em 0 0;
+}
 
 div[role="main"] {
     padding: 4.5em 0 0;
