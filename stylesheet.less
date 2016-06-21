@@ -345,14 +345,18 @@ button,
     }
 
     [data-widget-type="button"] {
-        .align-self(flex-end);
+        .align-self(flex-start);
     }
 }
 
 
 // Stops logo overlapping at mobile
 .logo-image {
-    max-width: 500px;
+    max-width: 350px;
+
+    @media only screen and (max-width: 1024px) {
+        max-width: 250px;
+    }
 
     @media @mobile-650px {
         max-width: 200px;
@@ -378,8 +382,8 @@ button,
 .template-navigation {
     background-color: @color-swatch1;
     margin: 0 auto;
-    left: 0;
-    right: 0;
+    left: 15px;
+    right: 15px;
     max-width: 1200px;
     position: absolute;
     bottom: -40px;
@@ -387,6 +391,8 @@ button,
 
     @media @tablet-860px {
         bottom: -50px;
+        left: 0;
+        right: 0;
         height: 50px;
     }
 
@@ -816,7 +822,7 @@ div[data-widget-type="extendednavigation"] {
             -webkit-font-smoothing: antialiased;
             text-transform: uppercase;
 
-            @media @tablet-860px {
+            @media only screen and (max-width: 1024px) {
                 font-size: bkscale(@font__feature-headline--font-size, 0.75);
                 line-height: bkscale(@font__feature-headline--line-height, 0.75);
             }
@@ -834,6 +840,11 @@ div[data-widget-type="extendednavigation"] {
             font-size: @font__feature-strapline--font-size;
             letter-spacing: @font__feature--letter-spacing;
             line-height: @font__feature-strapline--line-height;
+
+            @media only screen and (max-width: 1024px) {
+                font-size: bkscale(@font__feature-strapline--font-size, 0.85);
+                line-height: bkscale(@font__feature-strapline--line-height, 0.85);
+            }
 
             @media @mobile-650px {
                 font-size: bkscale(@font__feature-strapline--font-size, 0.75);
@@ -1169,7 +1180,6 @@ div[role="main"] {
     background-color: transparent;
     padding: 30px 1em;
     position: relative;
-    top: -40px;
 
     @media @mobile-650px {
         padding: 25px 0;
