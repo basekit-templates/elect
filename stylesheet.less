@@ -264,6 +264,10 @@ button,
     position: relative;
     padding-bottom: 50px;
 
+    @media @tablet-860px {
+        padding-bottom: 20px;
+    }
+
     .pagetitle-text {
         color: @color__companyname--text;
         font-size: @font__h2--font-size;
@@ -285,7 +289,9 @@ button,
         padding: 7px 20px;
 
         @media @mobilte-650px {
+            margin-bottom: 20px;
             padding: 3px 15px;
+            width: 100%;
         }
     }
 }
@@ -297,11 +303,20 @@ button,
     .align-items(center);
     width: 100%;
 
+    @media @tablet-860px {
+        .flex-wrap(wrap);
+    }
+
     // Header container
     .brand-container {
         .flex-display;
+        .flex-wrap(wrap);
         .align-items(center);
         position: relative;
+
+        @media @mobile-650px {
+            .flex-order(2);
+        }
     }
 
 
@@ -319,6 +334,10 @@ button,
         margin-right: 12px;
         max-width: 100%;
 
+        @media @mobile-650px {
+            margin: 0 auto;
+        }
+
         .logo-link {
             display: block;
         }
@@ -329,6 +348,10 @@ button,
     [data-widget-type="companyname"] {
         @media @tablet-860px  {
             margin-right: 60px;
+        }
+
+        @media @mobile-650px {
+            margin: 5px 0;
         }
     }
 
@@ -346,6 +369,11 @@ button,
 
     [data-widget-type="button"] {
         .align-self(flex-start);
+
+        @media @tablet-860px {
+            .flex-order(1);
+            width: 100%;
+        }
     }
 }
 
@@ -364,6 +392,12 @@ button,
 
 }
 
+[data-widget-type="pagetitle"] {
+    @media @mobile-650px {
+        display: none;
+        visibility: hidden;
+    }
+
 
 // Header styling if slideshow is present
 .slideshow-home [data-widget-type="responsiveslideshow"] + .template-header-container {
@@ -381,18 +415,13 @@ button,
 
 .template-navigation {
     background-color: @color-swatch1;
-    margin: 0 auto;
-    left: 15px;
-    right: 15px;
+    margin: 15px auto 0;
     max-width: 1200px;
-    position: absolute;
-    bottom: -40px;
+    position: relative;
+    top: 25px;
     z-index: 10002;
 
     @media @tablet-860px {
-        bottom: -50px;
-        left: 0;
-        right: 0;
         height: 50px;
     }
 
@@ -494,7 +523,7 @@ ul.navigation-list--children {
 .navigation-list {
     height: 100%;
     margin: 0;
-    padding: 5px 0;
+    padding: 5px 10px;
 }
 
 div[data-widget-type="extendednavigation"] {
@@ -1075,6 +1104,10 @@ div[role="main"] {
                 margin-bottom: 0;
             }
         }
+    }
+
+    .responsivecolumns .widget {
+        padding: 0;
     }
 }
 
