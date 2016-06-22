@@ -206,9 +206,6 @@
         "header": {
             "color__header--background": "@color-swatch4"
         },
-        "footer": {
-            "color__footer--background": "transparent"
-        },
         "navigation": {
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color-hover",
