@@ -672,7 +672,7 @@ form.ecomproductslist__form {
 	// Section title and filters section (hidden)
 	.listing-header {
 		.flex-order(2);
-        padding:0 30px;
+        padding: 30px;
 		position: relative;
 		width: 100%;
 		-webkit-transition: visiblity 1s ease, width 0.5s ease;
@@ -899,7 +899,7 @@ form.ecomproductslist__form {
 	.product-article {
 		.flex-display;
 		.align-items(center);
-		padding: 60px 0;
+		padding: 30px 0 20px;
 		position: relative;
 		/*min-height: 50vh;
 		max-height: 90vh;*/
@@ -908,7 +908,7 @@ form.ecomproductslist__form {
 		@media @tablet-860px {
 			display: block;
 			height: auto;
-			padding: 0 0 25px;
+			padding: 0 15px 25px;
 			min-height: 0;
 			max-height: initial;
 		}
@@ -1086,13 +1086,15 @@ form.ecomproductslist__form {
 		color: @color__ecomproduct-title--text;
 		margin-bottom: 0;
 		padding-bottom: 5px;
+        font-size: @font-swatch2-font-size;
+        line-height: @font-swatch2-line-height;
 	}
 
 	// Prodcut price label
 	.product-price {
 		color: @color__ecomproduct-price--text;
 		font-family: @font__p--font-family;
-		font-size: bkscale(@font__h4--font-size, 0.95);
+		font-size: bkscale(@font__h4--font-size, 0.9);
 		line-height: @font__h4--line-height;
 		margin-bottom: 14px;
 
@@ -1154,6 +1156,10 @@ form.ecomproductslist__form {
 	.product-actions {
 		padding: 0;
 		margin: 0 0 25px;
+
+        @media @mobile-650px {
+            margin-bottom: 0;
+        }
 	}
 
 	// Product category and tags

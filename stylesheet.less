@@ -459,12 +459,14 @@ button,
     max-width: 1200px;
     position: relative;
     top: 25px;
+    z-index: 1;
 
     @media @mobile-650px {
         height: 50px;
         margin-top: 0;
         top: 0;
         width: 100%;
+        z-index: initial;
     }
 
     .container {
@@ -579,6 +581,12 @@ div[data-widget-type="extendednavigation"] {
 
         .widget-overlay {
             display: none!important;
+        }
+
+        .bk-overlay {
+            left: initial!important;
+            height: 50px!important;
+            width: 65px!important;
         }
     }
 
@@ -1133,7 +1141,7 @@ div[role="main"] {
 
         // Adds spacing between first widget and header
         &:first-child {
-            padding-top: 30px;
+            padding-top: 30px!important;
         }
 
         // Full width widgets
@@ -1279,7 +1287,7 @@ div[role="main"] {
     position: relative;
 
     @media @tablet-860px {
-        padding: 0 25px 25px;
+        padding: 25px;
         text-align: center;
     }
 

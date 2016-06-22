@@ -1,0 +1,45 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<!-- CONTAINER -->
+<div class="template-container">
+    <div class="default-page">
+
+    <!-- HEADER -->
+    {% include "includes/header-default.twig" %}
+
+    <!-- MAIN SECTION -->
+    <div role="main" id="main">
+
+        <div class="container">
+
+            <!-- MAIN ZONE -->
+            {{zone('main')|raw}}
+
+        </div>
+
+    </div>
+
+    <!--<div class="default-profile">
+        {{widget('profile', 'main-profile', { 'profileType':'form', 'formTitle':'Sign up to our newsletter'})|raw}}
+    </div>-->
+
+    <!-- FOOTER -->
+    {% include "includes/footer.twig" %}
+
+    </div>
+</div>
+<!-- END CONTAINER -->
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+        if($(".ecomproduct__product-gallery").length == 0)
+        {
+           $("body").addClass("product-one-image");
+        }
+    </script>
+
+{% endblock %}
