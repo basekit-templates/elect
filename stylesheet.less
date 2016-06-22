@@ -272,6 +272,26 @@ button,
     @media @mobile-650px {
         background-color: darken(@color__header--background, 10%);
     }
+
+    .template-header {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+
+        @media @mobile-650px {
+            position: relative;
+        }
+    }
+
+    .template-navigation {
+        top: -45px;
+
+        @media @mobile-650px {
+            top: 0;
+        }
+    }
 }
 
 
@@ -293,26 +313,6 @@ button,
         line-height: @font__h2--line-height;
         margin: 10px 0 0;
         text-align: center;
-    }
-
-    .template-header {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 9999;
-
-        @media @mobile-650px {
-            position: relative;
-        }
-    }
-
-    .template-navigation {
-        top: -45px;
-
-        @media @mobile-650px {
-            top: 0;
-        }
     }
 }
 
