@@ -134,14 +134,14 @@
             "font-weight": "inherit",
             "line-height": "32px",
             "color": "lighten(@color-swatch4, 10%)",
-            "letter-spacing": "-1px"
+            "letter-spacing": "0px"
         },
         "font10": {
             "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "22px",
             "font-weight": "600",
             "line-height": "32px",
-            "color": "@color-swatch6",
+            "color": "@color-swatch1",
             "letter-spacing": "0px"
         }
     },
@@ -154,7 +154,7 @@
             "color__body--background": "@color-swatch7",
             "color__container--background": "@color-swatch1",
             "color__link--text": "@color-swatch2",
-            "color__companyname--text": "@color-swatch1",
+            "color__companyname--text": "@font-swatch10-color",
             "font__companyname--font-family" : "@font-swatch10-font-family",
             "font__companyname--font-size" : "@font-swatch10-font-size",
             "font__companyname--font-weight" : "@font-swatch10-font-weight",
