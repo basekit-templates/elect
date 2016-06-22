@@ -211,6 +211,10 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 //  3. Blog Post
 // -----------------------------
 
+[data-name="blogpost"] {
+	padding-top: 0!important;
+}
+
 
 // Single blog post container
 .post-article {
@@ -314,6 +318,12 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			line-height: bkscale(@font__h1--line-height, 0.75);
 			margin-top: -5px;
 		}
+
+		@media @tablet-650px {
+			font-size: bkscale(@font__h1--font-size, 0.50);
+			line-height: bkscale(@font__h1--line-height, 0.55);
+			margin-top: -5px;
+		}
 	}
 
 	// Blog content area
@@ -351,8 +361,8 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		line-height: bkscale(@font__p--line-height, 1.1);
 
 		@media @tablet {
-			font-size: bkscale(@font__p--font-size, 1);
-			line-height: bkscale(@font__p--line-height, 1.05);
+			font-size: bkscale(@font__p--font-size, 0.95);
+			line-height: bkscale(@font__p--line-height, 1);
 		}
 	}
 
@@ -485,7 +495,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	padding: 4rem 30px 2rem;
 
 	@media @mobile-650px {
-		padding: 2.5rem 30px 2rem;
+		padding: 2.5rem 30px 0;
 	}
 }
 

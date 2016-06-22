@@ -263,7 +263,38 @@ button,
     }
 }
 
-.home-page {
+
+.home-page [data-name="responsiveslideshow"] + .template-header-container {
+    background-color: transparent;
+    position: initial;
+    padding-bottom: 0;
+
+    @media @mobile-650px {
+        background-color: darken(@color__header--background, 10%);
+    }
+}
+
+
+// Container for brand and navigation
+.home-page [data-widget-type="responsiveslideshow"].bk-tpl-hidden + .template-header-container,
+.template-header-container {
+    background-color: darken(@color__header--background, 10%);
+    position: relative;
+
+    @media @mobile-650px {
+        .flex-display;
+        .flex-wrap(wrap);
+        .flex-direction(row);
+    }
+
+    .pagetitle-text {
+        color: @color__companyname--text;
+        font-size: @font__h2--font-size;
+        line-height: @font__h2--line-height;
+        margin: 10px 0 0;
+        text-align: center;
+    }
+
     .template-header {
         position: absolute;
         left: 0;
@@ -282,36 +313,6 @@ button,
         @media @mobile-650px {
             top: 0;
         }
-    }
-}
-
-.home-page .template-header-container {
-    background-color: transparent;
-    position: initial;
-    padding-bottom: 0;
-
-    @media @mobile-650px {
-        background-color: darken(@color__header--background, 10%);
-    }
-}
-
-// Container for brand and navigation
-.template-header-container {
-    background-color: darken(@color__header--background, 10%);
-    position: relative;
-
-    @media @mobile-650px {
-        .flex-display;
-        .flex-wrap(wrap);
-        .flex-direction(row);
-    }
-
-    .pagetitle-text {
-        color: @color__companyname--text;
-        font-size: @font__h2--font-size;
-        line-height: @font__h2--line-height;
-        margin: 10px 0 0;
-        text-align: center;
     }
 }
 
@@ -1100,7 +1101,6 @@ div[data-widget-type="extendednavigation"] {
 }
 
 
-
 // Main
 // ---------------
 
@@ -1130,18 +1130,17 @@ div[role="main"] {
 
     // Default widget spacing
     .widget {
-        margin: 0 auto 40px;
+        margin: 0 auto 20px;
         max-width: 1000px;
         padding: 0 30px;
 
         @media @mobile-650px {
-            margin-bottom; 20px;
             padding: 0 20px;
         }
 
         // Adds spacing between first widget and header
         &:first-child {
-            padding-top: 30px!important;
+            padding-top: 30px;
         }
 
         // Full width widgets
