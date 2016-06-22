@@ -18,6 +18,7 @@
 // -------------------------
 
 @import "@{templateCommon}/bk-less-framework-v8.less";
+@import "@{templateLocal}/color-variables.less";
 
 
 
@@ -43,7 +44,7 @@
 // -----------------------------
 
 #tdk-toolbar {
-    display: none!important;
+    //display: none!important;
 }
 
 // Global
@@ -286,7 +287,7 @@ button,
 
 // Container for brand and navigation
 .template-header-container {
-    background-color: black;
+    background-color: darken(@color__header--background, 10%);
     position: relative;
 
     @media @mobile-650px {
@@ -317,6 +318,7 @@ button,
     @media @mobile-650px {
         .flex-order(0);
         padding: 25px 25px 15px;
+        z-index: 10003;
     }
 
     // Header container
@@ -1375,8 +1377,7 @@ div[role="main"] {
 
 
 
-// New colour variables
+// Fork styles
 // -----------------------
 
-//@import "@{templateLocal}/less/variables.less";
 @import "@{templateLocal}/less/fork.less";
