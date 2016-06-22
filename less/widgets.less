@@ -33,6 +33,11 @@
     background-color: @color__body--background;
     padding: 60px 0;
 
+    @media @mobile-650px {
+        background-color: transparent;
+        padding: 25px 0 10px;
+    }
+
     &:before,
     &:after {
         content: "";
@@ -71,9 +76,9 @@ ul.tweet-list {
 // Single tweet
 .tweet-list li {
 	background-color: @color__twitter-item--background;
-	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
-    -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
     box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
     .flex-grow(1);
     margin-bottom: 25px;
 	padding: 28px 25px 25px;
@@ -85,6 +90,10 @@ ul.tweet-list {
     }
 
     @media @mobile-650px {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 0;
         margin-right: 0;
         width: 100%;
     }
@@ -935,6 +944,6 @@ div[role="main"] {
 
 .clicktocall__phone-number-link {
     @media @mobile-650px {
-        color: @color__button--text;
+        color: @font-swatch7-color;
     }
 }

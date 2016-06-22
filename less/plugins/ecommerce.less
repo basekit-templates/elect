@@ -646,6 +646,12 @@ form.ecomproductslist__form {
 		padding-bottom: 0;
 	}
 
+    .filters-toggle {
+        position: relative;
+        right: 30px;
+        top; 30px;
+    }
+
 	.filters-toggle:after {
 		content: "\f002";
 		position: relative;
@@ -666,20 +672,10 @@ form.ecomproductslist__form {
 	// Section title and filters section (hidden)
 	.listing-header {
 		.flex-order(2);
+        padding:0 30px;
 		position: relative;
-		height: 0;
-		width: 0;
-		opacity: 0;
-		visibility: hidden;
 		width: 100%;
 		-webkit-transition: visiblity 1s ease, width 0.5s ease;
-	}
-
-	// Make section title and filters section visible
-	&.filters-open .listing-header {
-		height: auto;
-		opacity: 1;
-		visibility: visible;
 	}
 
 	.listing-title {

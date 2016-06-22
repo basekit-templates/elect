@@ -68,6 +68,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 1200px;
+    padding-bottom: 20px;
 
     @media only screen and (max-width: 1024px) {
         margin: 0 25px;
@@ -85,11 +86,11 @@ body {
     box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.04);
 }
 
-div[role="main"] {
-    [data-name="responsivecolumns"],
-    [data-name="twitter"],
-    [data-name="image"],
-    [data-name="slideshow"] {
+div[role="main"] .widget {
+    &[data-name="responsivecolumns"],
+    &[data-name="twitter"],
+    &[data-name="image"],
+    &[data-name="slideshow"] {
         padding-top: 30px;
     }
 }
@@ -458,7 +459,6 @@ button,
     max-width: 1200px;
     position: relative;
     top: 25px;
-    z-index: 1;
 
     @media @mobile-650px {
         height: 50px;
@@ -604,7 +604,7 @@ div[data-widget-type="extendednavigation"] {
         height: 100vh;
         width: 75%;
         .transition(right 400ms ease);
-        z-index: 9999;
+        z-index: 10003;
     }
 
     .nav-open div[data-widget-type="extendednavigation"] .widget-overlay {
@@ -651,7 +651,7 @@ div[data-widget-type="extendednavigation"] {
         margin: 0;
         padding: 16px 0 16px 25px;
         position: relative;
-        right: 30px;
+        right: 16px;
         top: 8px;
         text-indent: -9999px;
         .transition(background-color 0s ease-in);
@@ -694,7 +694,7 @@ div[data-widget-type="extendednavigation"] {
         // Toggle Button open state
         background-color: transparent!important;
         position: fixed;
-        right: 20px;
+        right: 16px;
         top: 12px;
         .transition(background-color 0s ease-out);
         z-index: 100000;
@@ -749,7 +749,7 @@ div[data-widget-type="extendednavigation"] {
             }
 
             .item-name {
-                padding: 14px 25px 14px 50px;
+                padding: 14px 12px 14px 50px;
             }
         }
     }
@@ -892,7 +892,7 @@ div[data-widget-type="extendednavigation"] {
 
         @media @tablet-860px {
             max-width: 80%;
-            padding: 0 70px;
+            padding: 0 55px;
         }
 
         @media @mobile-650px {
@@ -917,8 +917,8 @@ div[data-widget-type="extendednavigation"] {
             }
 
             @media @mobile-650px {
-                font-size: bkscale(@font__feature-headline--font-size, 0.6);
-                line-height: bkscale(@font__feature-headline--line-height, 0.6);
+                font-size: bkscale(@font__feature-headline--font-size, 0.5);
+                line-height: bkscale(@font__feature-headline--line-height, 0.5);
             }
         }
 
@@ -1127,16 +1127,13 @@ div[role="main"] {
         padding: 0 30px;
 
         @media @mobile-650px {
+            margin-bottom; 20px;
             padding: 0 20px;
         }
 
         // Adds spacing between first widget and header
         &:first-child {
-            margin-top: 60px;
-
-            @media @mobile-650px {
-                margin-top: 40px;
-            }
+            padding-top: 30px;
         }
 
         // Full width widgets
@@ -1281,8 +1278,8 @@ div[role="main"] {
     padding: 30px 1em;
     position: relative;
 
-    @media @mobile-650px {
-        padding: 25px 0;
+    @media @tablet-860px {
+        padding: 0 25px 25px;
         text-align: center;
     }
 
