@@ -899,7 +899,7 @@ form.ecomproductslist__form {
 	.product-article {
 		.flex-display;
 		.align-items(center);
-		padding: 30px 0 20px;
+		padding: 0;
 		position: relative;
 		/*min-height: 50vh;
 		max-height: 90vh;*/
@@ -1242,9 +1242,17 @@ form.ecomproductslist__form {
 	.align-content(center);
 
 	margin: 0;
+    padding-left: 25px;
 	position: relative;
 	height: 100%;
 	width: 100%;
+
+    @media @tablet-860px {
+        margin: 0 auto;
+        padding-left: 0;
+        padding-top: 15px;
+        text-align: center;
+    }
 }
 
 .product-one-image .product-images {
