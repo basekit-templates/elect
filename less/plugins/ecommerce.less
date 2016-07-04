@@ -929,6 +929,7 @@ form.ecomproductslist__form {
 		}
 
 		.image-link {
+            background-color: transparent;
 			height: auto;
 			line-height: auto;
 			text-align: center;
@@ -1246,7 +1247,7 @@ form.ecomproductslist__form {
 	width: 100%;
 }
 
-.product-one-image .ecom-product .product-images {
+.product-one-image .product-images {
 	overflow-y: hidden;
 }
 
@@ -1442,4 +1443,28 @@ form.ecomproductslist__form {
 			}
 		}
 	}
+}
+
+
+// Styles for responsive columns
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+    .ecomproductslist__form,
+    .ecomproductslist__form-body {
+        display: block;
+    }
+
+    .ecomproductslist__product-item {
+        width: 100%;
+    }
+
+    .product-filters .form-group {
+        margin-right: 0;
+    }
 }
