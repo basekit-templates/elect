@@ -429,6 +429,11 @@ button,
 }
 
 
+[data-widget-type="responsiveslideshow"] .widget-overlay {
+    z-index: 9999;
+}
+
+
 // Stops logo overlapping at mobile
 .logo-image {
     max-width: 350px;
@@ -440,7 +445,6 @@ button,
     @media @mobile-650px {
         max-width: 200px;
     }
-
 }
 
 [data-widget-type="pagetitle"] {
@@ -571,7 +575,7 @@ ul.navigation-list--children {
 .navigation-list {
     height: 100%;
     margin: 0;
-    padding: 5px 10px;
+    padding: 5px 15px;
 }
 
 div[data-widget-type="extendednavigation"] {
