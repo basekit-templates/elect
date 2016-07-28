@@ -1,7 +1,7 @@
 {
     "name": "Elect",
     "thumbnail": "piccolo.png",
-    "screenshot" : "piccolo-screenshot.jpg",
+    "screenshot" : "elect-screenshot.jpg",
     "widgetVersion": 2,
     "templateType":"standard",
     "pageTypes": ["home", "ecomproduct"],
