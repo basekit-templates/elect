@@ -4,7 +4,7 @@
     "screenshot" : "elect-screenshot.jpg",
     "widgetVersion": 2,
     "templateType":"standard",
-    "pageTypes": ["home", "ecomproduct"],
+    "pageTypes": ["home", "ecomproduct", "donate" ],
     "images":[
         "images/slideshow-1.jpg",
         "images/slideshow-2.jpg"
