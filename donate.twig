@@ -14,10 +14,12 @@
         <div class="container">
 
             {{widget('pagetitle', 'title', {})|raw}}
-
-            {{widget('content', 'donatecontent', {
-              content: '<p>Follow these simple steps to add a &lsquo;Raise The Money&rsquo; campaign widget to your page - and start taking donations today!</p><ol><li>Go to <a href="https://politics.raisethemoney.com/register" target="_blank">https://politics.raisethemoney.com/register</a>, create a account and enter your campaign requirements.</li><li>Once you have your unique embed code, click the embed widget below, and paste into the text box. Click &lsquo;Save&rsquo;.</li><li>Once you see your donation widget appear, delete the contents of this instructional information.</li><li>If you wish, add more content to the page using the &lsquo;Add Content&rsquo; button in the top-left section of the website editor.</li></ol>'
-            })|raw}}
+            
+            <div class="donate-instructions">
+                {{widget('content', 'donatecontent', {
+                  content: '<p>Follow these simple steps to add a &lsquo;Raise The Money&rsquo; campaign widget to your page - and start taking donations today!</p><ol><li>Go to <a href="https://politics.raisethemoney.com/register" target="_blank">https://politics.raisethemoney.com/register</a>, create a account and enter your campaign requirements.</li><li>Once you have your unique embed code, click the embed widget below, and paste into the text box. Click &lsquo;Save&rsquo;.</li><li>Once you see your donation widget appear, delete the contents of this instructional information.</li><li>If you wish, add more content to the page using the &lsquo;Add Content&rsquo; button in the top-left section of the website editor.</li></ol>'
+                })|raw}}
+            </div>
 
             {{widget('embed', 'embedwidget', {})|raw}}
 
